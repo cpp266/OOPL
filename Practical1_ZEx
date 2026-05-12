@@ -1,0 +1,321 @@
+🧠 JAVA CALCULATOR — FULL EXPLANATION + ALTERNATIVES
+1.
+Java
+import java.util.Scanner;
+📌 Overall meaning:
+Imports Scanner so we can take input from user.
+🧩 Terms:
+import → brings external classes
+java.util → package
+Scanner → input-handling class
+⭐ Alternatives:
+BufferedReader (faster, but complex)
+Console class (rare in labs)
+🎤 Viva line:
+“We use Scanner for user input; alternatively BufferedReader can also be used.”
+2.
+Java
+public class Calculator
+📌 Overall meaning:
+Defines a class named Calculator.
+🧩 Terms:
+public → accessible everywhere
+class → blueprint
+Calculator → class name
+⭐ Alternatives:
+No real alternative (Java must use class-based structure)
+🎤 Viva line:
+“Java programs must be written inside a class because it is object-oriented.”
+3.
+Java
+public static void main(String[] args)
+📌 Overall meaning:
+Program execution starts here.
+🧩 Terms:
+public → accessible to JVM
+static → no object needed
+void → returns nothing
+main → entry method
+String[] args → command line arguments
+⭐ Alternatives:
+String args[] (same meaning, different style)
+🎤 Viva line:
+“Main method is the entry point of Java program.”
+4.
+Java
+Scanner sc = new Scanner(System.in);
+📌 Overall meaning:
+Creates object to take input from keyboard.
+🧩 Terms:
+Scanner → class
+sc → object reference
+new → creates object
+System.in → keyboard input
+⭐ Alternatives:
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+Console
+🎤 Viva line:
+“Scanner object is used for input; BufferedReader is a faster alternative.”
+5.
+Java
+int choice;
+📌 Overall meaning:
+Stores menu selection.
+🧩 Terms:
+int → integer type
+choice → variable name
+⭐ Alternatives:
+String choice (if using text-based input)
+6.
+Java
+double num1, num2, result;
+📌 Overall meaning:
+Stores numbers and result.
+🧩 Terms:
+double → decimal type
+⭐ Alternatives:
+int → only whole numbers (not good for division)
+float → smaller precision
+7.
+Java
+do
+📌 Overall meaning:
+Starts loop that runs at least once.
+🧩 Terms:
+do → executes block first
+⭐ Alternatives:
+while(true) + break
+for(;;) infinite loop
+8.
+Java
+System.out.println(...)
+📌 Overall meaning:
+Prints menu on screen.
+🧩 Terms:
+System → system class
+out → output stream
+println → print + newline
+⭐ Alternatives:
+print() → no new line
+printf() → formatted output
+9.
+Java
+choice = sc.nextInt();
+📌 Overall meaning:
+Takes user input.
+🧩 Terms:
+= → assignment
+nextInt() → reads integer
+⭐ Alternatives:
+nextLine() (string input)
+BufferedReader.readLine()
+10.
+Java
+if(choice == 6)
+📌 Overall meaning:
+Checks if user wants to exit.
+🧩 Terms:
+if → condition
+== → equality
+⭐ Alternatives:
+switch-case
+while(condition) based exit logic
+11.
+Java
+break;
+📌 Overall meaning:
+Stops loop immediately.
+🧩 Terms:
+break → exits loop
+⭐ Alternatives:
+return (if inside method)
+changing loop condition
+12.
+Java
+num1 = sc.nextDouble();
+num2 = sc.nextDouble();
+📌 Overall meaning:
+Takes two numbers.
+🧩 Terms:
+nextDouble() → decimal input
+⭐ Alternatives:
+nextInt() (only integers)
+Scanner.nextFloat()
+13.
+Java
+switch(choice)
+📌 Overall meaning:
+Chooses operation based on input.
+🧩 Terms:
+switch → multi-branch selection
+⭐ Alternatives:
+if-else ladder
+nested if conditions
+14.
+Java
+case 1:
+result = num1 + num2;
+📌 Overall meaning:
+Performs addition.
+🧩 Terms:
+case → specific condition
++ → addition operator
+⭐ Alternatives:
+if(choice == 1) approach
+15.
+Java
+result = num1 - num2;
+📌 Overall meaning:
+Subtraction.
+⭐ Alternatives:
+Same logic using if-else
+16.
+Java
+result = num1 * num2;
+📌 Overall meaning:
+Multiplication.
+⭐ Alternatives:
+repeated addition (theoretical)
+17.
+Java
+if(num2 != 0)
+📌 Overall meaning:
+Checks division safety.
+🧩 Terms:
+!= → not equal
+⭐ Alternatives:
+try-catch (for exceptions)
+18.
+Java
+result = num1 / num2;
+📌 Overall meaning:
+Performs division.
+⭐ Alternatives:
+integer division (bad precision)
+19.
+Java
+result = num1 % num2;
+📌 Overall meaning:
+Gives remainder.
+⭐ Alternatives:
+manual subtraction loop method
+20.
+Java
+default:
+📌 Overall meaning:
+Handles invalid input.
+⭐ Alternatives:
+input validation using loop before switch
+21.
+Java
+} while(choice != 6);
+📌 Overall meaning:
+Repeats until exit.
+⭐ Alternatives:
+while(true) + break
+recursive method (not recommended)
+22.
+Java
+sc.close();
+📌 Overall meaning:
+Closes input stream.
+⭐ Alternatives:
+not closing (but not recommended)
+try-with-resources (best practice)
+
+JAVA CALCULATOR — CONCEPTUAL VIVA QUESTIONS
+1. ❓ Why did you use a do-while loop?
+🎯 What they’re testing:
+Do you understand loop behavior.
+✅ Answer:
+We use a do-while loop because we want the menu to execute at least once before checking the condition. The calculator should first show options, then decide whether to repeat or exit.
+2. ❓ Difference between while and do-while loop?
+🎯 Testing concept clarity
+✅ Answer:
+while loop checks condition first, then executes
+do-while executes first, then checks condition
+So do-while always runs at least once.
+3. ❓ Why is switch-case used instead of if-else?
+🎯 Decision-making understanding
+✅ Answer:
+Switch-case is used because it is cleaner and more readable when we have multiple fixed options like 1 to 6. It improves code clarity compared to multiple if-else conditions.
+4. ❓ Can we replace switch-case with if-else?
+🎯 Flexibility check
+✅ Answer:
+Yes, we can replace it with if-else ladder, but switch-case is more efficient and easier to read for fixed choices.
+5. ❓ Why did you use double instead of int?
+🎯 Data type understanding
+✅ Answer:
+We use double because division can produce decimal values, which cannot be stored accurately in int.
+6. ❓ What happens if you divide by zero?
+🎯 Error handling awareness
+✅ Answer:
+Division by zero causes runtime error in integers, but in double it results in infinity or NaN. In this program, we handle it using condition num2 != 0.
+7. ❓ What is Scanner class?
+🎯 Input handling concept
+✅ Answer:
+Scanner is a built-in Java class used to take input from the user through keyboard or other input streams.
+8. ❓ Why do we use new keyword?
+🎯 Object creation concept
+✅ Answer:
+new keyword is used to create an object in heap memory so that Scanner can be used for input operations.
+9. ❓ What is the role of System.in?
+🎯 Input stream understanding
+✅ Answer:
+System.in represents the standard input stream (keyboard input).
+10. ❓ What is break used for?
+🎯 Loop control
+✅ Answer:
+break is used to immediately exit the loop when the user selects exit option.
+11. ❓ What is modulus operator (%) used for?
+🎯 Arithmetic understanding
+✅ Answer:
+It returns the remainder after division.
+Example: 10 % 3 = 1
+12. ❓ Why do we close Scanner?
+🎯 Resource management
+✅ Answer:
+We close Scanner using close() to free system resources and avoid memory leaks.
+13. ❓ What is default case in switch?
+🎯 Error handling
+✅ Answer:
+Default case runs when user enters an invalid option not defined in any case.
+14. ❓ What is entry point of Java program?
+🎯 Core Java concept
+✅ Answer:
+The main method is the entry point where JVM starts program execution.
+15. ❓ What is static in main method?
+🎯 OOP concept
+✅ Answer:
+Static means the method belongs to class, so JVM can call it without creating an object.
+16. ❓ Why is main method public?
+🎯 Access control
+✅ Answer:
+It is public so that JVM can access it from outside the class.
+17. ❓ What happens if we remove main method?
+🎯 Execution understanding
+✅ Answer:
+The program will not run because JVM will not find the starting point.
+18. ❓ Can we use multiple main methods?
+🎯 Overloading concept
+✅ Answer:
+Yes, we can overload main method, but JVM will only execute the standard signature.
+19. ❓ What is difference between print and println?
+🎯 Output concept
+✅ Answer:
+print() → stays on same line
+println() → moves to next line after printing
+20. ❓ What is the logic of this program overall?
+🎯 Big picture understanding
+✅ Answer:
+This program is a menu-driven calculator that repeatedly takes user input, performs arithmetic operations using switch-case, and exits when the user selects option 6.
+⚡ BONUS “TRAP QUESTIONS” TEACHERS LOVE
+These are sneaky ones 😭
+❓ What if user enters text instead of number?
+👉 It throws InputMismatchException
+❓ Why not use recursion instead of loop?
+👉 Because recursion is memory heavy and unnecessary here
+❓ What if num2 is negative?
+👉 Division and modulus still work normally
+❓ Can switch work with double?
+👉 No, switch works with int, char, String (not double)
