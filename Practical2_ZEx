@@ -1,0 +1,325 @@
+🧠 SHOPPING CART PROGRAM — FULL DEEP VIVA BREAKDOWN
+1. 📦 Import
+import java.util.*;
+📌 Overall meaning:
+
+Imports all utility classes like ArrayList, Scanner, List etc.
+
+🧩 Terms:
+import → includes external packages
+java.util → package containing utility classes
+* → imports ALL classes inside package
+⭐ Alternatives:
+import java.util.ArrayList;
+import java.util.List;
+
+👉 (better practice: import only what you need)
+
+🎤 Viva line:
+
+“This imports utility classes like ArrayList and List from java.util package.”
+
+2. 🧱 Product Class
+class Product
+📌 Overall meaning:
+
+Defines blueprint for product details.
+
+🧩 Terms:
+class → blueprint
+Product → user-defined class name
+⭐ Alternatives:
+
+No direct alternative (OOP structure required)
+
+3. 🔒 Variables (Encapsulation)
+private int id;
+private String name;
+private double price;
+private int quantity;
+📌 Overall meaning:
+
+Stores product details securely.
+
+🧩 Terms:
+private → access only inside class
+int → whole numbers
+String → text
+double → decimal values
+⭐ Alternatives:
+public (not recommended → breaks encapsulation)
+protected (for inheritance cases)
+🎤 Viva line:
+
+“We use private access modifier to achieve encapsulation and protect data.”
+
+4. 🏗️ Default Constructor
+public Product()
+📌 Overall meaning:
+
+Creates product with default values.
+
+🧩 Terms:
+public → accessible outside class
+Product() → constructor (same name as class)
+⭐ Alternatives:
+No-arg constructor manually setting values elsewhere
+🎤 Viva line:
+
+“Default constructor initializes object with default values.”
+
+5. 🏗️ Partial Constructor
+public Product(int id, String name)
+📌 Overall meaning:
+
+Initializes only id and name.
+
+🧩 Terms:
+parameters → input values
+constructor overloading → multiple constructors
+⭐ Alternatives:
+setter methods instead of constructor
+6. 🏗️ Full Constructor
+public Product(int id, String name, double price, int quantity)
+📌 Overall meaning:
+
+Initializes all product values.
+
+⭐ Alternatives:
+builder pattern (advanced OOP)
+setters after object creation
+7. 📊 getTotal()
+public double getTotal()
+📌 Overall meaning:
+
+Calculates total price of product.
+
+🧩 Terms:
+public → accessible outside class
+double → return type
+return → sends value back
+⭐ Alternatives:
+inline calculation in Cart class
+🎤 Viva line:
+
+“This method calculates total price = price × quantity.”
+
+8. 🖨️ display()
+public void display()
+📌 Overall meaning:
+
+Prints product details in formatted way.
+
+🧩 Terms:
+void → returns nothing
+printf → formatted output
+⭐ Alternatives:
+println (less structured)
+using StringBuilder
+9. 📦 Cart Class
+class Cart
+📌 Overall meaning:
+
+Handles list of products and billing logic.
+
+10. 📚 ArrayList
+private List<Product> products = new ArrayList<>();
+📌 Overall meaning:
+
+Stores multiple products dynamically.
+
+🧩 Terms:
+List → interface
+ArrayList → dynamic array implementation
+<Product> → generics (type safety)
+new → creates object
+⭐ Alternatives:
+LinkedList
+Product[] (fixed size array)
+🎤 Viva line:
+
+“We use ArrayList for dynamic storage of products.”
+
+11. ➕ addProduct()
+products.add(p);
+📌 Overall meaning:
+
+Adds product to cart.
+
+🧩 Terms:
+add() → method of ArrayList
+⭐ Alternatives:
+manually inserting into array
+12. 📊 calculateSubtotal()
+for (Product p : products)
+📌 Overall meaning:
+
+Loops through all products.
+
+🧩 Terms:
+enhanced for loop
+: means “in”
+⭐ Alternatives:
+traditional for loop
+iterator
+➕ total calculation:
+total += p.getTotal();
+📌 Overall meaning:
+
+Adds each product total to final subtotal.
+
+🧩 Terms:
++= → add and assign
+⭐ Alternatives:
+stream API (advanced Java)
+13. 💰 Discount logic
+if (total > 10000)
+📌 Overall meaning:
+
+Applies discount based on total amount.
+
+🧩 Terms:
+if-else → condition checking
+⭐ Alternatives:
+switch (not suitable here)
+separate discount class (OOP improvement)
+14. 🧾 printInvoice()
+📌 Overall meaning:
+
+Prints full bill with subtotal, discount, final amount.
+
+⭐ Alternatives:
+GUI-based invoice
+file writing (PrintWriter)
+15. 🚀 MAIN CLASS
+public class ShoppingApp
+📌 Overall meaning:
+
+Main application class.
+
+16. 📥 Scanner
+Scanner sc = new Scanner(System.in);
+⭐ Alternatives:
+
+BufferedReader
+
+17. 🛒 Cart object
+Cart cart = new Cart();
+📌 Overall meaning:
+
+Creates cart to store products.
+
+18. 🔢 input size
+int n = sc.nextInt();
+📌 Overall meaning:
+
+Number of products user wants to add.
+
+19. 🔁 loop
+for (int i = 0; i < n; i++)
+📌 Overall meaning:
+
+Repeats input process for each product.
+
+⭐ Alternatives:
+while loop
+do-while loop
+20. 📥 product input
+int id = sc.nextInt();
+String name = sc.nextLine();
+double price = sc.nextDouble();
+📌 Overall meaning:
+
+Takes product details.
+
+⭐ Alternatives:
+using setter methods instead of constructor
+21. 🏗️ object creation
+Product p = new Product(id, name, price, quantity);
+📌 Overall meaning:
+
+Creates product object using full constructor.
+
+⭐ Alternatives:
+default constructor + setters
+22. ➕ add to cart
+cart.addProduct(p);
+📌 Overall meaning:
+
+Stores product in cart.
+
+23. 🧾 invoice
+cart.printInvoice();
+📌 Overall meaning:
+
+Displays final bill.
+
+🧠 OVERALL FLOW (VERY IMPORTANT)
+
+👉 User enters number of products
+👉 For each product:
+
+input details
+create object
+add to cart
+
+👉 Cart calculates:
+
+subtotal
+discount
+final bill
+
+👉 Prints invoice
+
+⚡ CONCEPTUAL VIVA QUESTIONS (IMPORTANT)
+❓ Why do we use class Product?
+
+👉 To represent real-world entity with properties and behavior.
+
+❓ What is encapsulation?
+
+👉 Wrapping data inside class and making variables private.
+
+❓ Why private variables?
+
+👉 To protect data from direct access.
+
+❓ What is constructor overloading?
+
+👉 Multiple constructors with different parameters.
+
+❓ Why ArrayList used instead of array?
+
+👉 Because ArrayList is dynamic (size can change).
+
+❓ Difference between List and ArrayList?
+
+👉 List is interface, ArrayList is implementation.
+
+❓ Why use generics <Product>?
+
+👉 To ensure type safety and avoid runtime errors.
+
+❓ What is enhanced for loop?
+
+👉 Simplified loop to iterate collections.
+
+❓ What is return type of getTotal()?
+
+👉 double (because it returns calculated value)
+
+❓ Why do we use Scanner here?
+
+👉 To take user input from keyboard.
+
+❓ What is final invoice method doing?
+
+👉 It calculates subtotal, applies discount, and prints bill.
+
+❓ What is real-world use of this program?
+
+👉 Shopping cart systems in e-commerce apps.
+
+🧠 FINAL ONE-LINE SUMMARY
+
+“This program demonstrates OOP concepts like classes, constructors, encapsulation, ArrayList, and methods by building a real-world shopping cart system that calculates billing and discounts.”
