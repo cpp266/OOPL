@@ -1,0 +1,141 @@
+🗄️ DATABASE CONNECTIVITY (JDBC) – ORAL CHEAT SHEET
+⭐ 1. JDBC (INTRODUCTION)
+JDBC (Java Database Connectivity) is an API used to connect Java programs with databases like MySQL or PostgreSQL.
+👉 It allows:
+Connecting to database
+Executing SQL queries
+Fetching results
+⭐ 2. JDBC ARCHITECTURE
+Steps:
+Java Application
+JDBC API
+Driver Manager
+JDBC Driver
+Database
+⭐ 3. JDBC STEPS (VERY IMPORTANT FOR VIVA)
+✔ Step 1: Load Driver
+Java
+Class.forName("com.mysql.cj.jdbc.Driver");
+✔ Step 2: Create Connection
+Java
+Connection con = DriverManager.getConnection(
+"jdbc:mysql://localhost:3306/test", "root", "password");
+✔ Step 3: Create Statement
+Java
+Statement stmt = con.createStatement();
+✔ Step 4: Execute Query
+Java
+ResultSet rs = stmt.executeQuery("SELECT * FROM student");
+✔ Step 5: Close Connection
+Java
+con.close();
+⭐ 4. CONNECTING JAVA WITH MYSQL / POSTGRESQL
+MySQL URL:
+
+jdbc:mysql://localhost:3306/dbname
+PostgreSQL URL:
+
+jdbc:postgresql://localhost:5432/dbname
+⭐ 5. CRUD OPERATIONS USING JDBC
+CRUD = Create, Read, Update, Delete
+✔ INSERT
+Java
+stmt.executeUpdate("INSERT INTO student VALUES (1,'Riya')");
+✔ SELECT
+Java
+ResultSet rs = stmt.executeQuery("SELECT * FROM student");
+✔ UPDATE
+Java
+stmt.executeUpdate("UPDATE student SET name='Anu' WHERE id=1");
+✔ DELETE
+Java
+stmt.executeUpdate("DELETE FROM student WHERE id=1");
+⭐ 6. PREPARED STATEMENT
+Used to prevent SQL injection and improve performance.
+Java
+PreparedStatement ps = con.prepareStatement(
+"INSERT INTO student VALUES (?, ?)");
+
+ps.setInt(1, 1);
+ps.setString(2, "Riya");
+ps.executeUpdate();
+👉 Advantages:
+Secure
+Faster for repeated queries
+🧾 ONE-LINE JDBC ANSWERS
+✔ JDBC: API to connect Java with database
+✔ Connection: Link between Java and DB
+✔ Statement: Used to execute SQL queries
+✔ ResultSet: Stores query result
+✔ PreparedStatement: Precompiled SQL statement
+✔ CRUD: Create, Read, Update, Delete
+⚡ JDBC TRICK QUESTIONS
+Q1. Why JDBC is used?
+To connect Java applications with databases.
+Q2. Difference between Statement and PreparedStatement?
+PreparedStatement is faster and secure.
+Q3. What is ResultSet?
+Object that stores data retrieved from database.
+Q4. Why Class.forName()?
+To load JDBC driver.
+📊 JAVA IN DATA SCIENCE – OVERVIEW
+Java is used in data science for:
+Data processing
+File handling
+Statistical analysis
+Visualization
+⭐ 7. READING & WRITING DATA
+✔ CSV FILE HANDLING
+Java
+BufferedReader br = new BufferedReader(new FileReader("data.csv"));
+String line;
+
+while((line = br.readLine()) != null) {
+    System.out.println(line);
+}
+✔ JSON HANDLING (Conceptual)
+Java uses libraries like:
+Gson
+Jackson
+Example idea:
+Java
+Gson gson = new Gson();
+⭐ 8. BASIC STATISTICS (APACHE COMMONS MATH)
+Used for:
+Mean
+Median
+Standard deviation
+Java
+Mean mean = new Mean();
+double result = mean.evaluate(new double[]{1,2,3,4,5});
+👉 Library: org.apache.commons.math3
+⭐ 9. JAVA FOR DATA VISUALIZATION (JAVA FX)
+JavaFX is used to create GUI applications and charts.
+✔ Example idea:
+Bar charts
+Line charts
+Pie charts
+Java
+import javafx.application.Application;
+👉 Used in:
+Dashboards
+Data visualization tools
+🧾 DATA SCIENCE ONE-LINE ANSWERS
+✔ Data Science in Java: Processing and analyzing data
+✔ CSV: Comma-separated file format
+✔ JSON: Lightweight data format
+✔ JavaFX: GUI + visualization toolkit
+✔ Apache Commons Math: Library for statistics
+⚡ TRICK VIVA QUESTIONS
+Q1. Can Java be used in Data Science?
+Yes, for data processing and analytics.
+Q2. Why CSV is used?
+Simple and lightweight data storage format.
+Q3. Why JavaFX?
+For graphical visualization of data.
+Q4. What is JDBC driver?
+Software that enables database communication.
+Q5. Why PreparedStatement is better?
+It prevents SQL injection and improves performance.
+🔥 FINAL ORAL ANSWER (VERY IMPORTANT)
+“JDBC is an API used to connect Java applications with databases like MySQL and PostgreSQL. It supports CRUD operations using Statement and PreparedStatement. In data science, Java is used for reading and writing CSV/JSON files, performing statistical analysis using Apache Commons Math, and visualizing data using JavaFX.”
