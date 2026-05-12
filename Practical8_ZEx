@@ -1,0 +1,185 @@
+🧠 SIMPLE ATM SYSTEM — FULL VIVA BREAKDOWN
+1. 📦 Import
+Java
+import java.util.Scanner;
+📌 Meaning:
+Imports Scanner class for user input.
+🧠 Concept:
+Library import
+Input handling
+⭐ Alternatives:
+BufferedReader
+Console
+2. 🧱 Class Customer
+Java
+class Customer {
+    double balance = 1000;
+}
+📌 Meaning:
+Represents a bank customer with initial balance.
+🧠 Concept:
+Class = blueprint
+Object stores data
+🔥 Key point:
+Balance is initialized to 1000.
+⭐ Alternatives:
+constructor-based initialization
+3. 🚀 Main Class
+Java
+public class SimpleATM
+📌 Meaning:
+Program execution starts here.
+4. 📥 Scanner + Object creation
+Java
+Scanner sc = new Scanner(System.in);
+Customer c = new Customer();
+📌 Meaning:
+Scanner → input system
+Customer object → holds balance
+5. 🔁 do-while loop (ATM menu)
+Java
+do { ... } while (choice != 4);
+📌 Meaning:
+Runs ATM menu repeatedly until exit.
+⭐ Alternatives:
+while(true)
+6. 📋 Menu System
+Displays ATM options:
+check balance
+deposit
+withdraw
+exit
+7. ⚠️ TRY block (VERY IMPORTANT)
+Java
+try {
+    choice = sc.nextInt();
+📌 Meaning:
+Code that might cause error is written inside try.
+🧠 Concept:
+Exception handling start point
+8. 🔀 switch case
+Java
+switch (choice)
+📌 Meaning:
+Selects operation based on user input.
+⭐ Alternatives:
+if-else ladder
+9. 💰 Case 1: Check Balance
+Java
+System.out.printf("Current Balance: %.2f%n", c.balance);
+📌 Meaning:
+Displays balance with 2 decimal format.
+🧠 Concept:
+formatted output
+⭐ Alternatives:
+println
+10. 💵 Deposit Money
+Java
+double deposit = sc.nextDouble();
+📌 Meaning:
+Takes deposit amount.
+🚨 Validation (IMPORTANT CONCEPT)
+Java
+if (deposit <= 0)
+    throw new IllegalArgumentException(...)
+📌 Meaning:
+Rejects invalid deposit.
+🧠 Concept:
+custom exception throwing
+➕ Update balance
+Java
+c.balance += deposit;
+📌 Meaning:
+Adds money to account.
+11. 💸 Withdraw Money
+Java
+double withdraw = sc.nextDouble();
+🚨 Validation 1
+Java
+if (withdraw <= 0)
+📌 Meaning:
+Invalid withdrawal check.
+🚨 Validation 2 (IMPORTANT)
+Java
+if (withdraw > c.balance)
+    throw new ArithmeticException("Insufficient funds!");
+📌 Meaning:
+Prevents overdrawing account.
+🧠 Concept:
+business logic validation
+➖ Deduct balance
+Java
+c.balance -= withdraw;
+12. ❌ Case 4 Exit
+Java
+System.out.println("Thank you...");
+📌 Meaning:
+Ends program.
+13. ❗ Default case
+Java
+default:
+📌 Meaning:
+Handles invalid menu choice.
+14. ⚠️ Exception Handling (VERY IMPORTANT)
+🧠 IllegalArgumentException
+Java
+catch (IllegalArgumentException e)
+📌 Meaning:
+Handles invalid input values.
+🧠 ArithmeticException
+Java
+catch (ArithmeticException e)
+📌 Meaning:
+Handles logic errors like insufficient balance.
+🧠 Generic Exception
+Java
+catch (Exception e)
+📌 Meaning:
+Handles unexpected errors (like wrong input type).
+🚨 Buffer clearing
+Java
+sc.nextLine();
+📌 Meaning:
+Clears input buffer after invalid input.
+🧠 CORE CONCEPTS IN THIS PROGRAM
+🟢 1. Object-Oriented Programming
+Class (Customer)
+Object (c)
+🟢 2. Exception Handling
+try-catch
+multiple catch blocks
+custom exception throwing
+🟢 3. Arithmetic Logic
+deposit (+)
+withdraw (-)
+🟢 4. Input Validation
+negative values rejected
+overdraft prevented
+🟢 5. Control Flow
+switch-case
+do-while loop
+🟢 6. Real-world simulation
+ATM system behavior
+⚡ CONCEPTUAL VIVA QUESTIONS
+❓ Why use try-catch here?
+👉 To handle runtime errors without crashing program.
+❓ Difference between checked and unchecked exceptions?
+👉 This program uses unchecked exceptions (runtime).
+❓ Why throw exception manually?
+👉 To enforce business rules (invalid deposit/withdrawal).
+❓ Why ArithmeticException?
+👉 To represent insufficient balance logically.
+❓ Why IllegalArgumentException?
+👉 For invalid input values.
+❓ What happens if exception is not handled?
+👉 Program crashes immediately.
+❓ Why use switch-case?
+👉 To handle multiple menu options cleanly.
+❓ Why use do-while?
+👉 Ensures menu runs at least once.
+❓ Why Scanner used?
+👉 To take user input.
+❓ What is real-world use?
+👉 Banking apps, ATM machines, payment systems.
+🧠 FINAL ONE-LINE SUMMARY
+“This program simulates an ATM system using OOP concepts and exception handling, allowing users to check balance, deposit, and withdraw money with proper validation and error handling using try-catch blocks.”
