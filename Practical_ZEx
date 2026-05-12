@@ -1,0 +1,324 @@
+🧠 FRUIT INHERITANCE PROGRAM — COMPLETE CONCEPT BREAKDOWN
+1. 📦 Package Import
+import java.util.Scanner;
+📌 Concept:
+
+External class usage (library import)
+
+🧠 Meaning:
+
+Brings Scanner class so we can take user input from keyboard.
+
+⭐ Alternative:
+BufferedReader
+Console
+2. 🧱 Class Concept
+class Fruit
+class FruitDetails
+class FruitDemo
+📌 Concept:
+
+Object-Oriented Programming structure
+
+🧠 Meaning:
+Each class represents a real-world entity
+Code is divided into logical blocks
+⭐ Alternative:
+
+Procedural programming (not recommended in Java)
+
+3. 🔒 Data Members (Variables)
+int fruitId;
+String name;
+double price;
+String season;
+📌 Concept:
+
+State of an object
+
+🧠 Meaning:
+
+Variables store properties of objects
+
+⭐ Alternative:
+float instead of double
+char[] instead of String (old style)
+4. 🔐 Access Modifiers (IMPLICIT concept)
+
+👉 Your code uses default (no keyword), but concept exists
+
+📌 Concept:
+
+Control visibility of variables and methods
+
+🧠 Types:
+public → accessible everywhere
+private → restricted
+default → same package
+⭐ Best practice:
+
+Variables should be private (encapsulation)
+
+5. 🏗️ Constructor Concept
+Fruit(...)
+FruitDetails(...)
+📌 Concept:
+
+Object initialization
+
+🧠 Meaning:
+
+Automatically sets values when object is created
+
+🔥 Constructor Overloading
+
+You have:
+
+1 constructor in Fruit
+1 constructor in FruitDetails
+
+👉 Same concept name, different parameters
+
+⭐ Alternative:
+
+Setters instead of constructors
+
+6. 🔗 this keyword
+this.fruitId = fruitId;
+📌 Concept:
+
+Distinguishing instance variable from parameter
+
+🧠 Meaning:
+left side → class variable
+right side → input value
+⭐ Alternative:
+
+Use different variable names (bad practice)
+
+7. 🧬 Inheritance
+class FruitDetails extends Fruit
+📌 Concept:
+
+IS-A relationship
+
+🧠 Meaning:
+
+FruitDetails automatically gets Fruit properties
+
+⭐ Alternative:
+
+Composition (HAS-A relationship)
+
+8. 🧠 super keyword
+super(fruitId, name, price);
+📌 Concept:
+
+Calling parent constructor
+
+🧠 Meaning:
+
+Initializes parent class part of object first
+
+⭐ Alternative:
+
+Manual assignment (not recommended)
+
+9. 📞 Method Calling (Reuse concept)
+displayFruit();
+📌 Concept:
+
+Code reuse using inheritance
+
+🧠 Meaning:
+
+Child uses parent method directly
+
+⭐ Alternative:
+
+Method overriding (custom behavior)
+
+10. 🧾 Methods
+void displayFruit()
+void displayFruitDetails()
+📌 Concept:
+
+Behavior of object
+
+🧠 Meaning:
+
+Functions inside class
+
+⭐ Alternative:
+
+Return-based methods instead of print methods
+
+11. 🔁 Method Overriding (related concept)
+
+👉 Not used here, but viva may ask
+
+📌 Meaning:
+
+Child redefining parent method
+
+⭐ Alternative:
+
+Method overloading
+
+12. 📥 Scanner Input System
+sc.nextInt()
+sc.nextLine()
+sc.nextDouble()
+📌 Concept:
+
+Input handling
+
+🧠 Meaning:
+
+Reads user data from keyboard
+
+⚠️ Important concept:
+sc.nextLine();
+
+👉 Used to consume leftover newline after nextInt()
+
+⭐ Alternative:
+
+Use only nextLine() and parse values
+
+13. 🧱 Object Creation
+FruitDetails f1 = new FruitDetails(...)
+📌 Concept:
+
+Object instantiation
+
+🧠 Meaning:
+
+Creates real instance of class in memory
+
+⭐ Alternative:
+default constructor + setters
+factory method pattern
+14. 📤 Output System
+System.out.println()
+📌 Concept:
+
+Standard output stream
+
+🧠 Meaning:
+
+Displays text on screen
+
+⭐ Alternative:
+printf() (formatted output)
+logging frameworks (advanced)
+15. 🔗 Relationship Between Classes
+📌 Concept:
+
+Parent-child relationship
+
+🧠 Meaning:
+Fruit → general class
+FruitDetails → specialized class
+⭐ Alternative:
+interface-based design
+16. 🧠 Polymorphism (implicit concept)
+
+👉 Not directly used but concept exists
+
+📌 Meaning:
+
+Same method name, different behavior possible
+
+17. 🚀 Main Method (Execution Entry Point)
+public static void main(String[] args)
+📌 Concept:
+
+Program execution starts here
+
+⭐ Alternative:
+
+No alternative in Java
+
+18. 🧹 Resource Management
+sc.close();
+📌 Concept:
+
+Free system resources
+
+⭐ Alternative:
+
+try-with-resources (better approach)
+
+🧠 FULL CONCEPT LIST (VERY IMPORTANT SUMMARY)
+
+Your program includes:
+
+🟢 OOP Concepts
+Class
+Object
+Inheritance
+Constructor
+Method reuse
+Encapsulation (conceptual)
+Polymorphism (theoretical)
+🟢 Java Basics
+Variables
+Data types
+Methods
+Input/Output
+🟢 Advanced Concepts
+Constructor chaining
+super keyword
+this keyword
+object creation
+memory allocation
+🟢 Input Handling
+Scanner class
+nextInt / nextLine / nextDouble
+newline handling issue
+⚡ CONCEPTUAL VIVA QUESTIONS (FROM FULL PROGRAM)
+❓ What is inheritance in this program?
+
+👉 FruitDetails inherits Fruit properties using extends keyword.
+
+❓ What is constructor chaining?
+
+👉 Calling parent constructor using super().
+
+❓ Why do we use super keyword?
+
+👉 To initialize parent class variables.
+
+❓ What is object in Java?
+
+👉 Instance of a class created using new keyword.
+
+❓ Why is this keyword used?
+
+👉 To differentiate class variables from parameters.
+
+❓ What is method reuse?
+
+👉 Child class using parent method without rewriting it.
+
+❓ What is Scanner class used for?
+
+👉 Taking input from user.
+
+❓ Why use nextLine after nextInt?
+
+👉 To consume leftover newline character.
+
+❓ Difference between this and super?
+
+👉 this = current class
+👉 super = parent class
+
+❓ What is real-world use of this program?
+
+👉 Product catalog systems, inventory systems, food tracking apps.
+
+🧠 FINAL MASTER UNDERSTANDING
+
+👉 This program demonstrates inheritance, constructor chaining, object creation, method reuse, input handling, and OOP structure to model a real-world fruit database system.
