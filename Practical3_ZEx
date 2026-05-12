@@ -1,0 +1,246 @@
+🧠 LIBRARY MANAGEMENT SYSTEM — FULL VIVA BREAKDOWN
+1. 📦 Import
+import java.util.*;
+📌 Overall meaning:
+
+Imports all utility classes like Scanner and ArrayList.
+
+🧩 Terms:
+import → includes external package
+java.util → utility package
+* → imports all classes
+⭐ Alternatives:
+import java.util.Scanner;
+import java.util.ArrayList;
+2. 📘 Book Class
+class Book
+📌 Overall meaning:
+
+Creates blueprint for book objects.
+
+🧩 Terms:
+class → blueprint
+Book → user-defined class
+3. 🔢 Variables
+int id;
+String title;
+boolean isIssued;
+static int totalBooks = 0;
+📌 Overall meaning:
+
+Stores book details and library count.
+
+🧩 Terms:
+int → whole number
+String → text
+boolean → true/false
+static → shared among all objects
+⭐ Important: static
+
+👉 totalBooks is shared by all books, not individual.
+
+⭐ Alternatives:
+Without static → each object has its own count (wrong for total tracking)
+4. 🏗️ Constructor
+Book(int id, String title)
+📌 Overall meaning:
+
+Initializes book when object is created.
+
+🧩 Terms:
+constructor → same name as class
+this → refers to current object
+⭐ Alternatives:
+default constructor + setters
+overloaded constructors (already used style)
+5. 📥 issueBook()
+if (!isIssued)
+📌 Overall meaning:
+
+Checks if book is available, then issues it.
+
+🧩 Terms:
+! → NOT operator
+isIssued → boolean flag
+⭐ Alternatives:
+using enum status (AVAILABLE/ISSUED)
+6. 🔄 returnBook()
+📌 Overall meaning:
+
+Marks book as returned.
+
+⭐ Alternatives:
+remove book from issued list (not ideal here)
+7. 🖨️ display()
+(isIssued ? "Issued" : "Available")
+📌 Overall meaning:
+
+Shows book status using ternary operator.
+
+🧩 Terms:
+? : → ternary operator
+condition ? true : false
+⭐ Alternatives:
+if-else instead of ternary
+8. 📊 static method
+static void showTotalBooks()
+📌 Overall meaning:
+
+Shows total books in library.
+
+🧩 Terms:
+static → belongs to class, not object
+⭐ Alternatives:
+non-static method (but requires object)
+9. 🚀 Main Class
+public class LibrarySystem
+📌 Overall meaning:
+
+Runs entire program.
+
+10. 📥 Scanner
+Scanner sc = new Scanner(System.in);
+⭐ Alternatives:
+
+BufferedReader
+
+11. 📚 ArrayList
+ArrayList<Book> library = new ArrayList<>();
+📌 Overall meaning:
+
+Stores all books dynamically.
+
+🧩 Terms:
+ArrayList → dynamic list
+<Book> → generics type safety
+⭐ Alternatives:
+LinkedList
+array Book[]
+12. 🔁 do-while loop
+📌 Overall meaning:
+
+Keeps menu running until exit.
+
+⭐ Alternatives:
+while(true) + break
+13. 📋 Menu system
+switch(choice)
+📌 Overall meaning:
+
+Selects operation based on user input.
+
+⭐ Alternatives:
+if-else ladder
+14. ➕ Add Book
+Book b = new Book(id, title);
+library.add(b);
+📌 Overall meaning:
+
+Creates and stores book.
+
+⭐ Alternatives:
+using setter methods
+15. 📤 Issue Book
+for (Book book : library)
+📌 Overall meaning:
+
+Loops through all books.
+
+🧩 Terms:
+enhanced for loop
+: means “in”
+⭐ Alternatives:
+normal for loop
+iterator
+16. 🔍 Search logic
+if (book.id == issueId)
+📌 Overall meaning:
+
+Finds book by ID.
+
+⭐ Alternatives:
+using HashMap (faster search)
+17. 📊 Static method call
+Book.showTotalBooks();
+📌 Overall meaning:
+
+Calls class-level method.
+
+⭐ Alternatives:
+object-based call (not recommended for static)
+18. 🚪 Exit
+while (choice != 6);
+📌 Overall meaning:
+
+Stops program when user chooses exit.
+
+🧠 OVERALL FLOW
+
+👉 User opens menu
+👉 Adds books
+👉 Issues or returns books
+👉 Views list
+👉 Checks total books
+👉 Exits program
+
+⚡ CONCEPTUAL VIVA QUESTIONS (VERY IMPORTANT)
+❓ What is static variable?
+
+👉 Shared variable among all objects.
+
+❓ Why totalBooks is static?
+
+👉 Because it tracks total count of all books, not individual book.
+
+❓ What is encapsulation here?
+
+👉 Data is grouped inside class (Book).
+
+❓ Why use ArrayList?
+
+👉 Because size of library is dynamic.
+
+❓ Difference between Array and ArrayList?
+
+👉 Array = fixed size
+👉 ArrayList = dynamic size
+
+❓ Why use enhanced for loop?
+
+👉 Easy to read and iterate collections.
+
+❓ What is ternary operator?
+
+👉 Shortcut of if-else.
+
+❓ Why use class Book?
+
+👉 To represent real-world entity (book).
+
+❓ What happens if book not found?
+
+👉 Program prints “Book not found”.
+
+❓ Why use Scanner?
+
+👉 To take user input.
+
+❓ What is object in this program?
+
+👉 Each Book created using new Book().
+
+❓ What is method overloading/usage here?
+
+👉 Constructor overloading concept used.
+
+❓ Why break is used in loop?
+
+👉 To stop searching once book is found.
+
+❓ What is real-world use?
+
+👉 Library management systems in schools and colleges.
+
+🧠 FINAL ONE-LINE SUMMARY
+
+“This program demonstrates OOP concepts like class, object, constructor, static variable, ArrayList, and menu-driven logic to simulate a library management system with issue, return, and tracking features.”
