@@ -1,0 +1,107 @@
+📦 JAVA ARRAYS – ORAL CHEAT SHEET (DETAILED)
+⭐ 1. ARRAYS (INTRODUCTION)
+An array is a data structure in Java used to store multiple values of the same data type in a single variable.
+👉 It stores elements in continuous memory locations.
+⭐ 2. DECLARING ARRAYS
+✔ Syntax:
+Java
+dataType[] arrayName;
+✔ Example:
+Java
+int[] marks;
+⭐ 3. CREATING ARRAYS
+✔ Syntax:
+Java
+arrayName = new dataType[size];
+✔ Example:
+Java
+marks = new int[5];
+⭐ 4. DECLARATION + CREATION TOGETHER
+Java
+int[] marks = new int[5];
+⭐ 5. INITIALIZING ARRAYS
+Java
+int[] marks = {10, 20, 30, 40, 50};
+⭐ 6. ACCESSING ARRAY ELEMENTS
+Index starts from 0
+Java
+System.out.println(marks[0]);
+⭐ 7. ARRAY EXAMPLE PROGRAM
+Java
+class ArrayDemo {
+    public static void main(String[] args) {
+        int[] marks = {10, 20, 30, 40, 50};
+
+        for(int i = 0; i < marks.length; i++) {
+            System.out.println(marks[i]);
+        }
+    }
+}
+⭐ 8. PASSING ARRAY TO METHOD
+Arrays can be passed as arguments.
+Java
+class Test {
+    void show(int[] arr) {
+        for(int i : arr) {
+            System.out.println(i);
+        }
+    }
+}
+⭐ 9. MULTIDIMENSIONAL ARRAYS
+An array of arrays (matrix form).
+✔ Syntax:
+Java
+int[][] matrix = new int[2][2];
+✔ Example:
+Java
+class Matrix {
+    public static void main(String[] args) {
+        int[][] a = {
+            {1, 2},
+            {3, 4}
+        };
+
+        System.out.println(a[0][1]);
+    }
+}
+👉 Output: 2
+⭐ 10. VARIABLE LENGTH ARGUMENTS (VARARGS)
+Used when number of arguments is unknown.
+✔ Syntax:
+Java
+void show(int... numbers)
+✔ Example:
+Java
+class Test {
+    void display(int... nums) {
+        for(int n : nums) {
+            System.out.println(n);
+        }
+    }
+}
+👉 Can pass:
+Java
+display(1,2,3);
+display(10,20);
+⭐ 11. COMMAND LINE ARGUMENTS
+Arguments passed at runtime from command line.
+✔ Example:
+Java
+class Test {
+    public static void main(String[] args) {
+        System.out.println(args[0]);
+    }
+}
+👉 Run like:
+
+java Test Hello
+👉 Output:
+
+Hello
+🧾 ONE-LINE ORAL ANSWERS
+✔ Array: Collection of same type elements
+✔ Index: Position of element starting from 0
+✔ Multidimensional array: Array of arrays
+✔ Varargs: Method accepting variable number of arguments
+✔ Command line arguments: Input given at runtime
+✔ Passing array: Sending array as method parameter
