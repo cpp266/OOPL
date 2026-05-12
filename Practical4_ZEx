@@ -1,0 +1,221 @@
+🧠 HOTEL ROOM BOOKING SYSTEM — FULL VIVA BREAKDOWN
+1. 📦 Import
+import java.util.Scanner;
+📌 Overall meaning:
+
+Imports Scanner class to take user input.
+
+🧩 Terms:
+import → includes external class
+java.util → package
+Scanner → input class
+⭐ Alternatives:
+BufferedReader
+Console
+2. 🧱 Class
+class HotelBookingSystem
+📌 Overall meaning:
+
+Defines program structure for hotel booking system.
+
+🧩 Terms:
+class → blueprint
+HotelBookingSystem → user-defined name
+3. 🚪 Main method
+public static void main(String[] args)
+📌 Overall meaning:
+
+Program execution starts here.
+
+🧩 Terms:
+public → accessible by JVM
+static → no object needed
+void → no return
+main → entry point
+4. 📥 Scanner object
+Scanner sc = new Scanner(System.in);
+📌 Overall meaning:
+
+Takes input from user.
+
+⭐ Alternatives:
+BufferedReader (faster)
+Scanner alternatives in advanced Java
+5. 🏨 Hotel structure
+int floors = 3;
+int rooms = 4;
+📌 Overall meaning:
+
+Defines hotel structure: 3 floors, 4 rooms each.
+
+🧩 Terms:
+int → integer type
+variables define structure size
+⭐ Alternatives:
+user input instead of fixed values
+6. 🟩 2D Array
+boolean[][] hotel = new boolean[floors][rooms];
+📌 Overall meaning:
+
+Creates a grid of rooms (floors × rooms).
+
+🧩 Terms:
+boolean → true/false
+[][] → 2D array (matrix)
+new → memory allocation
+🎯 Meaning of values:
+false → available room
+true → booked room
+⭐ Alternatives:
+int[][] (0 = free, 1 = booked)
+object-based Room class (advanced OOP)
+7. 🔁 do-while loop
+do { ... } while (choice != 3);
+📌 Overall meaning:
+
+Menu keeps running until user exits.
+
+⭐ Alternatives:
+while(true)
+for(;;)
+8. 📋 Menu display
+System.out.println("1. View Rooms");
+📌 Overall meaning:
+
+Shows options to user.
+
+9. 🎯 choice input
+choice = sc.nextInt();
+📌 Overall meaning:
+
+Reads user menu selection.
+
+10. 👁️ View Rooms (Option 1)
+for (int i = 0; i < floors; i++)
+📌 Overall meaning:
+
+Loops through floors.
+
+🧩 Terms:
+for → loop
+i → row index
+for (int j = 0; j < rooms; j++)
+📌 Overall meaning:
+
+Loops through rooms in each floor.
+
+if (hotel[i][j])
+    System.out.print("B ");
+else
+    System.out.print("A ");
+📌 Overall meaning:
+
+Checks room status:
+
+true → Booked (B)
+false → Available (A)
+🧩 Terms:
+if → condition
+hotel[i][j] → 2D array access
+⭐ Alternatives:
+use symbols like X / O
+or numbers (1/0)
+11. 🏷️ Book Room (Option 2)
+int f = sc.nextInt();
+int r = sc.nextInt();
+📌 Overall meaning:
+
+Takes floor and room number.
+
+🚨 Validation
+if (f < 1 || f > floors || r < 1 || r > rooms)
+📌 Overall meaning:
+
+Checks if input is valid.
+
+🧩 Terms:
+|| → OR operator
+< > → comparison operators
+⭐ Alternatives:
+separate nested if checks
+🚫 Already booked check
+else if (hotel[f - 1][r - 1])
+📌 Overall meaning:
+
+Checks if room already booked.
+
+🟢 Booking
+hotel[f - 1][r - 1] = true;
+📌 Overall meaning:
+
+Marks room as booked.
+
+12. 🚪 Exit option
+else if (choice == 3)
+📌 Overall meaning:
+
+Stops program.
+
+13. ❌ Invalid choice
+else
+📌 Overall meaning:
+
+Handles wrong input.
+
+🧠 OVERALL FLOW
+
+👉 User opens system
+👉 Chooses:
+
+View rooms → shows A/B grid
+Book room → marks room true
+Exit → stops program
+⚡ CONCEPTUAL VIVA QUESTIONS (IMPORTANT)
+❓ Why use boolean 2D array?
+
+👉 To represent grid of rooms with two states: booked or available.
+
+❓ What does hotel[i][j] mean?
+
+👉 i = floor, j = room number.
+
+❓ Why use 2D array instead of 1D?
+
+👉 Because hotel structure has rows and columns.
+
+❓ What is meaning of true/false here?
+
+👉 true = booked
+👉 false = available
+
+❓ Why subtract 1 (f - 1)?
+
+👉 Because array index starts from 0, but user input starts from 1.
+
+❓ What is use of || operator?
+
+👉 It checks multiple invalid conditions (OR logic).
+
+❓ Why do we use loops?
+
+👉 To traverse all floors and rooms.
+
+❓ What is real-world use?
+
+👉 Hotel booking systems, movie seat booking, train seat reservation.
+
+❓ Why do we use Scanner?
+
+👉 To take input from user.
+
+❓ What happens if invalid input entered?
+
+👉 Program shows “Invalid floor or room number”.
+
+❓ Why use nested loops?
+
+👉 Because we are working with 2D structure.
+
+🧠 FINAL ONE-LINE SUMMARY
+
+“This program simulates a hotel booking system using a 2D boolean array to track room availability, allowing users to view, book, and validate rooms using a menu-driven approach.”
