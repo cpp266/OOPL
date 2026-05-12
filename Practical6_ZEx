@@ -1,0 +1,259 @@
+🧠 SHAPE CALCULATOR — FULL VIVA BREAKDOWN
+1. 📦 Import
+import java.util.Scanner;
+📌 Overall meaning:
+
+Imports Scanner class for taking user input.
+
+🧩 Terms:
+import → includes external library
+java.util → package
+Scanner → input class
+⭐ Alternatives:
+BufferedReader
+Console
+2. 📐 Interface
+interface Shape
+📌 Overall meaning:
+
+Defines a contract that all shapes must follow.
+
+🧩 Terms:
+interface → blueprint of methods (no implementation)
+Shape → name of interface
+🔥 Key concept:
+
+Interface contains only method declarations, not body.
+
+⭐ Alternatives:
+abstract class
+3. 📌 Interface Methods
+void input();
+void perimeter();
+void area();
+📌 Overall meaning:
+
+All shapes must implement these methods.
+
+🧩 Terms:
+void → returns nothing
+method declaration → no body in interface
+⭐ Alternatives:
+abstract methods in abstract class
+4. 🔵 Class Circle implements Shape
+class Circle implements Shape
+📌 Overall meaning:
+
+Circle agrees to follow Shape rules.
+
+🧩 Terms:
+implements → used for interface inheritance
+⭐ Alternative:
+extends (used with class, not interface)
+5. 🔢 Variable
+double r;
+Scanner sc = new Scanner(System.in);
+📌 Overall meaning:
+
+Stores radius and input system.
+
+🧩 Terms:
+double → decimal values
+r → radius
+new → creates object
+6. 📥 input()
+r = sc.nextDouble();
+📌 Overall meaning:
+
+Takes radius input.
+
+⭐ Alternatives:
+nextInt() (less precise)
+BufferedReader input
+7. 📏 Circle Perimeter
+2 * 3.14 * r
+📌 Overall meaning:
+
+Calculates circumference.
+
+🧠 Formula concept:
+
+Perimeter = 2πr
+
+⭐ Alternatives:
+use Math.PI instead of 3.14
+8. 🔵 Circle Area
+3.14 * r * r
+📌 Overall meaning:
+
+Calculates area.
+
+⭐ Alternatives:
+Math.PI * r * r
+9. ⬛ Rectangle Class
+class Rectangle implements Shape
+📌 Overall meaning:
+
+Rectangle follows Shape rules.
+
+Variables:
+double l, b;
+📌 Meaning:
+
+Stores length and breadth.
+
+⭐ Alternatives:
+use int (less precise)
+10. 📐 Rectangle Perimeter
+2 * (l + b)
+📌 Meaning:
+
+Adds all sides.
+
+⭐ Alternatives:
+manual addition twice
+11. 📐 Rectangle Area
+l * b
+12. 🔺 Triangle Class
+class Triangle implements Shape
+Variables:
+double a, b, c;
+📌 Meaning:
+
+Three sides of triangle.
+
+13. 📥 input()
+
+Takes 3 side inputs.
+
+14. 📏 Triangle Perimeter
+a + b + c
+15. ⚠️ Triangle Area
+System.out.println("Area: not calculated");
+📌 Meaning:
+
+Area not implemented.
+
+⭐ Alternative:
+Heron’s formula (advanced)
+16. 🚀 Shape Factory Method
+static Shape choice(int ch)
+📌 Overall meaning:
+
+Returns object based on user choice.
+
+🧠 Concept:
+
+This is Factory Method Pattern
+
+Logic:
+if (ch == 1) return new Circle();
+else if (ch == 2) return new Rectangle();
+else return new Triangle();
+⭐ Alternatives:
+switch-case
+if-else inside main
+direct object creation
+17. 🚀 Main Method
+public static void main(String[] args)
+📌 Meaning:
+
+Program starts here.
+
+18. 📋 Menu Loop
+do { ... } while (ch != 4);
+📌 Meaning:
+
+Runs until exit selected.
+
+⭐ Alternatives:
+while(true)
+19. 🎯 Choice input
+ch = sc.nextInt();
+20. 🔀 Polymorphism (VERY IMPORTANT)
+Shape s = choice(ch);
+📌 Meaning:
+
+Parent reference pointing to child object.
+
+🧠 Concept:
+
+👉 Runtime polymorphism
+
+⭐ Alternatives:
+
+directly:
+
+Circle c = new Circle();
+21. 📞 Method calls
+s.input();
+s.perimeter();
+s.area();
+📌 Meaning:
+
+Same method name, different behavior based on object.
+
+🧠 CORE CONCEPTS IN THIS PROGRAM
+🟢 1. Interface
+contract for classes
+🟢 2. Implements
+used for interface inheritance
+🟢 3. Polymorphism
+one reference, many forms
+🟢 4. Method Overriding
+same methods in different classes
+🟢 5. Factory Method
+returns objects dynamically
+🟢 6. Scanner input
+user input handling
+🟢 7. Loops
+do-while menu system
+⚡ CONCEPTUAL VIVA QUESTIONS
+❓ What is interface?
+
+👉 A blueprint that defines methods without implementation.
+
+❓ Difference between interface and class?
+
+👉 Class = implementation
+👉 Interface = contract
+
+❓ Why use implements?
+
+👉 To inherit interface methods.
+
+❓ What is polymorphism?
+
+👉 One interface, many implementations.
+
+❓ What is runtime polymorphism here?
+
+👉 Shape reference pointing to Circle/Rectangle/Triangle objects.
+
+❓ Why use Shape reference?
+
+👉 To achieve flexibility and dynamic behavior.
+
+❓ What is factory method?
+
+👉 Method that returns different objects based on input.
+
+❓ Why interface is used?
+
+👉 To achieve abstraction and loose coupling.
+
+❓ Why not directly use Circle/Rectangle?
+
+👉 To make code flexible and scalable.
+
+❓ Why triangle area not calculated?
+
+👉 Simplified implementation; could use Heron’s formula.
+
+❓ What is abstraction here?
+
+👉 Hiding implementation and showing only method structure.
+
+🧠 FINAL ONE-LINE SUMMARY
+
+“This program demonstrates interface-based abstraction and runtime polymorphism using Shape interface, where Circle, Rectangle, and Triangle classes implement common methods and objects are created dynamically using a factory method.”
